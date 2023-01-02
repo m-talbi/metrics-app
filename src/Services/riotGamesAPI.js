@@ -1,4 +1,4 @@
-const API_KEY = 'RGAPI-11bae7aa-31f7-4bdd-a1ec-6cc302acff08';
+const API_KEY = '123';
 const REGION_BASE_URL = 'api.riotgames.com/lol/league/v4/challengerleagues/by-queue/RANKED_SOLO_5x5';
 const regions = {
   Europe: 'euw1',
