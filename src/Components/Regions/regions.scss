@@ -1,0 +1,53 @@
+.regions {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.region {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #DF4782;
+  cursor: pointer;
+
+  figure {
+    background-color: #DF4782;
+    opacity: 0.4;
+
+    .region-map {
+      width: 100px;
+    }
+  }
+
+  .region-name {
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  //#531F35
+
+  &:nth-child(1) {
+    background-color: #F34F8E;
+    & > figure {
+      background-color: #F34F8E;
+    }
+  }
+
+  &:nth-child(2) {
+    background-color: #f94e8f;
+    & > figure {
+      background-color: #f94e8f;
+    }
+  }
+
+  &:nth-child(3n) {
+    background-color: #f74e8f;
+    & > figure {
+      background-color: #f74e8f;
+    }
+  }
+}
+
+// #F4508F
+// #FF5194
