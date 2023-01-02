@@ -1,0 +1,49 @@
+.header {
+  width: 100%;
+	padding: 0.3rem 0.5rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.3rem;
+	background-color: #ec4c8a;
+	color: white;
+
+	.mobile-options,
+	.app-options {
+		display: flex;
+		justify-content: space-between;
+
+		.left-side {
+			justify-content: flex-start;
+		}
+
+		.right-side {
+			justify-content: flex-end;
+		}
+
+		.left-side,
+		.right-side {
+			display: flex;
+			gap: 0.3rem;
+			align-items: center;
+			width: 28%;
+
+			svg {
+				font-size: 20px;
+			}
+
+			span {
+				font-size: 12px;
+			}
+		}
+
+		.center {
+			display: flex;
+			align-items: center;
+			font-size: 14px;
+
+			.time {
+				font-weight: 700;
+			}
+		}
+	}
+}
