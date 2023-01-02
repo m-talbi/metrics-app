@@ -8,11 +8,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #DF4782;
+  background-color: #df4782;
   cursor: pointer;
 
   figure {
-    background-color: #DF4782;
+    background-color: #df4782;
     opacity: 0.4;
 
     .region-map {
@@ -25,17 +25,17 @@
     font-weight: 700;
   }
 
-  //#531F35
-
   &:nth-child(1) {
-    background-color: #F34F8E;
+    background-color: #f34f8e;
+
     & > figure {
-      background-color: #F34F8E;
+      background-color: #f34f8e;
     }
   }
 
   &:nth-child(2) {
     background-color: #f94e8f;
+
     & > figure {
       background-color: #f94e8f;
     }
@@ -43,11 +43,9 @@
 
   &:nth-child(3n) {
     background-color: #f74e8f;
+
     & > figure {
       background-color: #f74e8f;
     }
   }
 }
-
-// #F4508F
-// #FF5194
