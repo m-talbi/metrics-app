@@ -1,0 +1,58 @@
+.regions {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.region {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #df4782;
+  position: relative;
+  cursor: pointer;
+
+  > svg {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+  }
+
+  figure {
+    background-color: #df4782;
+    opacity: 0.4;
+
+    .region-map {
+      width: 100px;
+    }
+  }
+
+  .region-name {
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  &:nth-child(1) {
+    background-color: #f34f8e;
+
+    & > figure {
+      background-color: #f34f8e;
+    }
+  }
+
+  &:nth-child(2) {
+    background-color: #f94e8f;
+
+    & > figure {
+      background-color: #f94e8f;
+    }
+  }
+
+  &:nth-child(3n) {
+    background-color: #f74e8f;
+
+    & > figure {
+      background-color: #f74e8f;
+    }
+  }
+}
