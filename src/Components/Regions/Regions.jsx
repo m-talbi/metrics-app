@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import './regions.scss';
+import { BsArrowRightCircle } from 'react-icons/bs';
 import brazilMap from '../../Assets/brazil.png';
 import russiaMap from '../../Assets/russia.png';
 import europeMap from '../../Assets/europe.png';
@@ -23,6 +24,7 @@ const Regions = ({ regions }) => {
         regions.length && regions.map((region) => (
           Object.keys(region).map((key) => (
             <div key={key} className="region">
+              <BsArrowRightCircle />
               <figure>
                 <img className="region-map" src={regionMaps[key]} alt={`${key} region map`} />
               </figure>

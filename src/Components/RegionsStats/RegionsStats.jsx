@@ -49,7 +49,10 @@ const RegionsStats = ({
     </div>
     <div className="other-stats">
       <div>
-        <p className="value">{highestWinrate}</p>
+        <p className="value">
+          {highestWinrate}
+          %
+        </p>
         <span className="key">
           Highest
           <br />

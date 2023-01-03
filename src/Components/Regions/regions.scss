@@ -9,7 +9,14 @@
   justify-content: center;
   align-items: center;
   background-color: #df4782;
+  position: relative;
   cursor: pointer;
+
+  > svg {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+  }
 
   figure {
     background-color: #df4782;
