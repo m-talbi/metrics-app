@@ -6,9 +6,9 @@ import russiaMap from '../../Assets/russia.png';
 import europeMap from '../../Assets/europe.png';
 import koreaMap from '../../Assets/korea.png';
 import japanMap from '../../Assets/japan.png';
-import northAmericaMap from '../../Assets/northAmerica.png';
+import northAmericaMap from '../../Assets/north america.png';
 
-const Regions = ({ regions }) => {
+const Regions = ({ regions, navigate }) => {
   const regionMaps = {
     Brazil: brazilMap,
     Russia: russiaMap,
@@ -21,9 +21,9 @@ const Regions = ({ regions }) => {
   return (
     <div className="regions">
       {
-        regions.length && regions.map((region) => (
+        regions.map((region) => (
           Object.keys(region).map((key) => (
-            <div key={key} className="region">
+            <div role="presentation" key={key} className="region" onClick={navigate(key)}>
               <BsArrowRightCircle />
               <figure>
                 <img className="region-map" src={regionMaps[key]} alt={`${key} region map`} />
