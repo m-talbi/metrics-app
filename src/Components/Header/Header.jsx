@@ -6,22 +6,18 @@ import { BsBatteryFull, BsFillMicFill } from 'react-icons/bs';
 import { MdArrowBackIos, MdSettings } from 'react-icons/md';
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { DateTime } from 'luxon';
 
 const Header = () => {
-  const [path, setPath] = useState('All Regions');
-  const [currentTime, setCurrentTime] = useState(new Date(Date.now())
-    .toLocaleDateString('en-US', { hour: 'numeric', minute: 'numeric' })
-    .match(/((\d)|(\d\d)):\d\d\s\w\w/)[0]);
-
-  useEffect(() => {
-    setTimeout(() => setCurrentTime(new Date(Date.now())
-      .toLocaleDateString('en-US', { hour: 'numeric', minute: 'numeric' })
-      .match(/((\d)|(\d\d)):\d\d\s\w\w/)[0]), 1000 * 60);
-    return () => clearTimeout();
-  }, []);
-
   const location = useLocation();
   const navigate = useNavigate();
+  const [path, setPath] = useState('All Regions');
+  const [currentTime, setCurrentTime] = useState(DateTime.now().toFormat('HH:mm'));
+
+  useEffect(() => {
+    setTimeout(() => setCurrentTime(DateTime.now().toFormat('HH:mm')), 1000 * 60);
+    return () => clearTimeout();
+  }, []);
 
   useEffect(() => {
     if (location.pathname === '/') setPath('All Regions');

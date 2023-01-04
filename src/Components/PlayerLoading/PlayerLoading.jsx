@@ -18,7 +18,7 @@ const PlayerLoading = () => (
       <p className="title">Games History</p>
       <div className="games">
         {
-          Array.from(Array(5).keys()).map((idx) => (
+          Array.from(Array(6).keys()).map((idx) => (
             <div key={idx} className="match-card-loading">
               <div className="game-type">
                 <div className="game-info skeleton" />

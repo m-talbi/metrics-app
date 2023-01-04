@@ -38,6 +38,7 @@
   background-color: #f74e8f;
   padding: 0.75rem 0;
   display: flex;
+  height: 94px;
 
   & > div {
     width: 25%;
@@ -50,6 +51,7 @@
 
 .other-stats-loading {
   display: flex;
+  height: 94px;
 
   & > div {
     padding: 0.75rem 0;
@@ -89,7 +91,7 @@
 
 .region-loading {
   width: 50%;
-  height: 120px;
+  height: 104px;
   display: flex;
   justify-content: center;
   align-items: center;

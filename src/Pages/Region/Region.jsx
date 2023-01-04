@@ -1,54 +1,54 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { useEffect, useState } from 'react';
+import {
+  useEffect, useLayoutEffect, useRef, useState,
+} from 'react';
 import './region.scss';
 import PlayerCard from '../../Components/PlayerCard/PlayerCard';
-import brazilMap from '../../Assets/brazil.png';
-import russiaMap from '../../Assets/russia.png';
-import europeMap from '../../Assets/europe.png';
-import koreaMap from '../../Assets/korea.png';
-import japanMap from '../../Assets/japan.png';
-import northAmericaMap from '../../Assets/north america.png';
 
 const Region = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const [topPlayer, setTopPlayer] = useState();
+  const [highestLP, setHighestLP] = useState();
   const [ladder, setLadder] = useState();
 
   const region = useSelector((state) => state.regions)
     ?.regions
     ?.find((region) => region[location.state.region])[location.state.region];
 
+  const sorted = useRef(null);
+
   useEffect(() => {
     if (region) {
-      const sorted = [...region.entries];
-      sorted.sort((player1, player2) => player1.leaguePoints < player2.leaguePoints);
+      sorted.current = [...region.entries];
+      sorted.current.sort((player1, player2) => player1.leaguePoints < player2.leaguePoints);
 
-      setTopPlayer(sorted[0]);
-      setLadder(sorted);
+      setHighestLP(sorted.current[0].leaguePoints);
+      setLadder(sorted.current);
     }
   }, [region]);
 
-  const navigateToProfile = (player, imageName) => () => {
+  useLayoutEffect(() => {
+    window.scrollTo({ top: 0, left: 0 });
+  }, []);
+
+  const navigateToProfile = (player, profilePicId) => () => {
     const path = `player/${player.summonerName}`;
     navigate(path, {
       state: {
         ...location.state,
         player,
-        imageName,
+        profilePicId,
         path: [...location.state.path, ...path.split('/')],
       },
     });
   };
 
-  const regionMaps = {
-    Brazil: brazilMap,
-    Russia: russiaMap,
-    Europe: europeMap,
-    Korea: koreaMap,
-    Japan: japanMap,
-    'North America': northAmericaMap,
+  const filterByName = (ev) => {
+    const name = ev.target.value;
+    const regex = new RegExp(name.split().join('|'), 'i');
+    setLadder(() => sorted.current
+      .filter((player) => regex.test(player.summonerName)));
   };
 
   return (
@@ -57,27 +57,35 @@ const Region = () => {
         <figure>
           <img
             className="region-map"
-            src={regionMaps[location.state.region]}
+            src={`${process.env.PUBLIC_URL}/regions/${location.state.region.toLowerCase()}.png`}
             alt={`${location.state.region} region map`}
           />
         </figure>
         <div className="region-name">
           <p>{location.state.region}</p>
           <p>Highest LP</p>
-          <p>{topPlayer?.leaguePoints}</p>
+          <p>{highestLP}</p>
         </div>
       </div>
       <div className="region-players">
-        <p className="title">All Players</p>
+        <div className="region-menu">
+          <p className="title">All Players</p>
+          <input
+            className="filter-field"
+            type="text"
+            placeholder="Filter by name"
+            onInput={filterByName}
+          />
+        </div>
         <div className="players-list">
           {
-            ladder?.map((player, idx) => (
+            ladder?.map((player) => (
               <PlayerCard
                 leaguePoints={player.leaguePoints}
                 key={player.summonerId}
                 playerName={player.summonerName}
-                imageName={idx}
-                navigate={navigateToProfile(player, idx)}
+                imageName={player.profileId}
+                navigate={navigateToProfile(player, player.profileId)}
               />
             ))
           }

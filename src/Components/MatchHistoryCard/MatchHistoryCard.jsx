@@ -8,8 +8,6 @@ const MatchHistoryCard = ({ game, summoner }) => {
     .participants
     .find(({ puuid }) => puuid === summoner.puuid);
 
-  const kda = inGamePlayerStats.kills + inGamePlayerStats.assists / inGamePlayerStats.deaths;
-
   return (
     <div className="match-card">
       <div className="game-type">
@@ -38,7 +36,7 @@ const MatchHistoryCard = ({ game, summoner }) => {
               {inGamePlayerStats.assists}
             </p>
             <p>
-              { kda.toFixed(2) }
+              { inGamePlayerStats.challenges.kda.toFixed(2) }
               :1 KDA
             </p>
           </div>
@@ -63,7 +61,7 @@ const MatchHistoryCard = ({ game, summoner }) => {
         <p>
           P/Kill
           {' '}
-          {inGamePlayerStats.challenges.killParticipation.toFixed(2)}
+          {inGamePlayerStats.challenges?.killParticipation?.toFixed(2)}
         </p>
         <p>
           Gold:
@@ -73,7 +71,7 @@ const MatchHistoryCard = ({ game, summoner }) => {
         <p>
           Damage:
           <br />
-          {inGamePlayerStats.totalDamageDealt}
+          {inGamePlayerStats.totalDamageDealtToChampions}
         </p>
       </div>
     </div>

@@ -12,10 +12,17 @@ const regions = [
 
 const getAllRegionPlayersType = 'leagueLeaderboard/regions/GET_REGIONS';
 
+const generateProfilePicId = (start, end) => Math.floor((Math.random() * end - start) + start);
+
 export const getAllRegionPlayersThunk = createAsyncThunk(getAllRegionPlayersType, async () => {
   const regionsData = await Promise.all(regions.map((region) => getRegionPlayersAsync(region)
     .then((data) => ({
-      [region]: { ...data, entries: data.entries.filter((_, idx) => idx < 15) },
+      [region]: {
+        ...data,
+        entries: data.entries.filter((_, idx) => idx < 24).map((player) => ({
+          ...player, profileId: generateProfilePicId(0, 32),
+        })),
+      },
     }))));
 
   const stats = {

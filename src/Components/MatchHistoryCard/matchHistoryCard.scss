@@ -32,7 +32,7 @@
         &::before {
           content: ' ';
           position: absolute;
-          width: 75px;
+          width: 70px;
           height: 2px;
           background-color: #bd2662;
           bottom: -8px;
@@ -116,6 +116,10 @@
           border-radius: 8px;
           background-color: rgb(46, 46, 46);
           opacity: 0.3;
+        }
+
+        @media only screen and (max-width: 340px) {
+          gap: 0.1rem;
         }
       }
     }
