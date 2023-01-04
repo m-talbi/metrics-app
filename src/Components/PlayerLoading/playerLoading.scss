@@ -106,7 +106,6 @@
   }
 
   .player-champion-loading {
-
     .champion {
       display: flex;
       gap: 0.5rem;
@@ -119,7 +118,6 @@
       }
 
       .game-stats {
-
         > .champion-info {
           width: 50px;
           height: 0.9rem;
@@ -138,7 +136,6 @@
     }
 
     .champion-items {
-
       > ul {
         display: flex;
         gap: 0.3rem;
@@ -160,21 +157,21 @@
     flex-direction: column;
     gap: 0.2rem;
 
-    > .ingame-info  {
+    > .ingame-info {
       width: 70px;
       height: 0.9rem;
       border-radius: 4px;
     }
 
-    > .ingame-info:nth-child(2)  {
+    > .ingame-info:nth-child(2) {
       width: 50px;
     }
 
-    > .ingame-info:nth-child(3)  {
+    > .ingame-info:nth-child(3) {
       width: 60px;
     }
 
-    > .ingame-info:last-child  {
+    > .ingame-info:last-child {
       width: 50px;
     }
   }
