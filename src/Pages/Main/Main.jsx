@@ -1,28 +1,49 @@
 import './main.scss';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import challengerImg from '../../Assets/challenger2.png';
 import RegionsStats from '../../Components/RegionsStats/RegionsStats';
 import Regions from '../../Components/Regions/Regions';
+import MainLoading from '../../Components/MainLoading/MainLoading';
 
 const Main = () => {
   const regions = useSelector((state) => state.regions);
+  const navigate = useNavigate();
+
+  const navigateToRegion = (key) => () => {
+    const path = `region/${key.toLowerCase().replace(' ', '-')}`;
+    navigate(path, {
+      state: {
+        region: key,
+        path: path.split('/'),
+      },
+    });
+  };
 
   return (
-    <div className="main">
-      <div className="league-stats">
+    <div className="app-main">
+      <div className="main-league-stats">
         <figure>
           <img src={challengerImg} alt="League of Legends Challenger" />
         </figure>
       </div>
-      <RegionsStats
-        highestLeaguePoints={regions.highestLeaguePoints}
-        highestWins={regions.highestWins}
-        highestWinrate={regions.highestWinrate}
-        playersAbove1000LP={regions.playersAbove1000LP}
-        hotStreaks={regions.hotStreaks}
-        veterans={regions.veterans}
-      />
-      <Regions regions={regions.regions ?? []} />
+      {
+        regions ? (
+          <>
+            <RegionsStats
+              highestLeaguePoints={regions.highestLeaguePoints}
+              highestWins={regions.highestWins}
+              highestWinrate={regions.highestWinrate}
+              playersAbove1000LP={regions.playersAbove1000LP}
+              hotStreaks={regions.hotStreaks}
+              veterans={regions.veterans}
+            />
+            <Regions regions={regions.regions ?? []} navigate={navigateToRegion} />
+          </>
+        ) : (
+          <MainLoading />
+        )
+      }
     </div>
   );
 };

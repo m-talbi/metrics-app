@@ -32,23 +32,15 @@
     font-weight: 700;
   }
 
-  &:nth-child(1) {
-    background-color: #f34f8e;
+  &:nth-child(4n-1) {
+    background-color: #f74e8f;
 
     & > figure {
-      background-color: #f34f8e;
+      background-color: #f74e8f;
     }
   }
 
-  &:nth-child(2) {
-    background-color: #f94e8f;
-
-    & > figure {
-      background-color: #f94e8f;
-    }
-  }
-
-  &:nth-child(3n) {
+  &:nth-child(4n-2) {
     background-color: #f74e8f;
 
     & > figure {

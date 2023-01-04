@@ -1,0 +1,123 @@
+.match-card {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+
+  .other-ingame-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+
+    > p {
+      font-size: 14px;
+    }
+  }
+
+  .game-type {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+
+    > p {
+      font-size: 13px;
+
+      &:nth-child(1) {
+        font-weight: 700;
+      }
+
+      &:nth-child(2) {
+        margin-bottom: 0.5rem;
+        position: relative;
+
+        &::before {
+          content: ' ';
+          position: absolute;
+          width: 75px;
+          height: 2px;
+          background-color: #bd2662;
+          bottom: -8px;
+          left: 0;
+          border-radius: 8px;
+        }
+      }
+
+      &:nth-child(3) {
+        font-weight: 700;
+        font-size: 15px;
+      }
+    }
+
+    > .red {
+      color: rgb(134, 15, 15);
+    }
+
+    > .blue {
+      color: #2a4e9b;
+    }
+  }
+
+  .player-champion {
+    .champion {
+      display: flex;
+      gap: 0.5rem;
+
+      > div:first-child {
+        position: relative;
+
+        > .champion-level {
+          position: absolute;
+          background-color: rgb(129, 129, 129);
+          color: white;
+          font-size: 13px;
+          font-weight: 700;
+          padding: 0.2rem;
+          border-radius: 50%;
+          bottom: 2px;
+          right: 0;
+        }
+
+        img {
+          border-radius: 50%;
+          width: 60px;
+          height: 60px;
+        }
+      }
+
+      .champion-info {
+        > p:last-child {
+          font-size: 14px;
+        }
+
+        > p:nth-child(2) {
+          font-size: 14px;
+          font-weight: 700;
+        }
+      }
+    }
+
+    .champion-items {
+      > ul {
+        display: flex;
+        gap: 0.3rem;
+
+        > li {
+          list-style: none;
+
+          > .champion-item {
+            border-radius: 8px;
+            width: 25px;
+            height: 25px;
+          }
+        }
+
+        > .none {
+          width: 25px;
+          height: 25px;
+          border-radius: 8px;
+          background-color: rgb(46, 46, 46);
+          opacity: 0.3;
+        }
+      }
+    }
+  }
+}

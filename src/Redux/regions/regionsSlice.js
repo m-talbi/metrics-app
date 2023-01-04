@@ -10,7 +10,7 @@ const regions = [
   'North America',
 ];
 
-const getAllRegionPlayersType = 'leagueLeaderboard/players/GET_PLAYERS';
+const getAllRegionPlayersType = 'leagueLeaderboard/regions/GET_REGIONS';
 
 export const getAllRegionPlayersThunk = createAsyncThunk(getAllRegionPlayersType, async () => {
   const regionsData = await Promise.all(regions.map((region) => getRegionPlayersAsync(region)
@@ -45,8 +45,8 @@ export const getAllRegionPlayersThunk = createAsyncThunk(getAllRegionPlayersType
 });
 
 const regionsSlice = createSlice({
-  name: 'players',
-  initialState: {},
+  name: 'regions',
+  initialState: null,
   extraReducers: (builder) => {
     builder.addCase(getAllRegionPlayersThunk.fulfilled, (_, action) => action.payload);
   },

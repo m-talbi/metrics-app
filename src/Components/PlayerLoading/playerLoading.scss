@@ -1,0 +1,178 @@
+@keyframes skeleton-loading {
+  0% {
+    background-color: rgb(187 187 187);
+  }
+
+  100% {
+    background-color: rgb(104, 104, 104);
+  }
+}
+
+.skeleton {
+  opacity: 0.9;
+  animation: skeleton-loading 1s linear infinite alternate;
+}
+
+.app-player-info-loading {
+  background-color: #f74e8f;
+  color: white;
+  min-height: 100vh;
+
+  > .summoner-details-loading {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem 3rem 1rem 1.5rem;
+    gap: 1rem;
+
+    .profile-icon {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+    }
+
+    .details {
+      > .profile-info {
+        width: 150px;
+        height: 0.9rem;
+        border-radius: 4px;
+        margin-bottom: 0.5rem;
+      }
+
+      > .profile-info:first-child {
+        width: 100px;
+        height: 1.5rem;
+        border-radius: 6px;
+      }
+    }
+  }
+
+  > .player-match-history {
+    > .title {
+      padding: 0.3rem 1rem;
+      background-color: #df4682;
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    > .games {
+      > div:nth-child(even) {
+        background-color: #df4682;
+      }
+    }
+  }
+}
+
+.match-card-loading {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+
+  .game-type {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+
+    > .game-info {
+      width: 80px;
+      height: 1rem;
+      border-radius: 6px;
+
+      &:nth-child(1) {
+        width: 50px;
+        height: 1.2rem;
+      }
+
+      &:nth-child(2) {
+        margin-bottom: 0.5rem;
+        position: relative;
+
+        &::before {
+          content: ' ';
+          position: absolute;
+          width: 75px;
+          height: 2px;
+          background-color: #bd2662;
+          bottom: -8px;
+          left: 0;
+          border-radius: 8px;
+        }
+      }
+
+      &:nth-child(3) {
+        width: 70px;
+      }
+    }
+  }
+
+  .player-champion-loading {
+    .champion {
+      display: flex;
+      gap: 0.5rem;
+
+      .champion-icon-loading {
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        margin-bottom: 0.5rem;
+      }
+
+      .game-stats {
+        > .champion-info {
+          width: 50px;
+          height: 0.9rem;
+          border-radius: 6px;
+          margin-bottom: 0.5rem;
+        }
+
+        > .champion-info:nth-child(2) {
+          width: 60px;
+        }
+
+        > .champion-info:nth-child(3) {
+          width: 90px;
+        }
+      }
+    }
+
+    .champion-items {
+      > ul {
+        display: flex;
+        gap: 0.3rem;
+
+        > .none {
+          list-style: none;
+          width: 25px;
+          height: 25px;
+          border-radius: 8px;
+          background-color: rgb(46, 46, 46);
+          opacity: 0.3;
+        }
+      }
+    }
+  }
+
+  .other-ingame-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+
+    > .ingame-info {
+      width: 70px;
+      height: 0.9rem;
+      border-radius: 4px;
+    }
+
+    > .ingame-info:nth-child(2) {
+      width: 50px;
+    }
+
+    > .ingame-info:nth-child(3) {
+      width: 60px;
+    }
+
+    > .ingame-info:last-child {
+      width: 50px;
+    }
+  }
+}
