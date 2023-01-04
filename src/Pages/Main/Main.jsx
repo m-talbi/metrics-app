@@ -1,7 +1,6 @@
 import './main.scss';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import challengerImg from '../../Assets/challenger2.png';
 import RegionsStats from '../../Components/RegionsStats/RegionsStats';
 import Regions from '../../Components/Regions/Regions';
 import MainLoading from '../../Components/MainLoading/MainLoading';
@@ -24,7 +23,7 @@ const Main = () => {
     <div className="app-main">
       <div className="main-league-stats">
         <figure>
-          <img src={challengerImg} alt="League of Legends Challenger" />
+          <img src={`${process.env.PUBLIC_URL}/challenger2.png`} alt="League of Legends Challenger" />
         </figure>
       </div>
       {

@@ -1,5 +1,5 @@
 import { useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useLayoutEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { clearPlayer, getAccountBySummonerId } from '../../Redux/player/playerSlice';
 import './player.scss';
@@ -20,6 +20,10 @@ const Player = () => {
     return () => dispatch(clearPlayer());
   }, []);
 
+  useLayoutEffect(() => {
+    window.scrollTo({ top: 0, left: 0 });
+  }, []);
+
   return (
     <div className="app-player-info">
       {
@@ -28,7 +32,7 @@ const Player = () => {
             <div className="summoner-details">
               <figure>
                 <img
-                  src={`${process.env.PUBLIC_URL}/profile/${location.state.imageName}.png`}
+                  src={`${process.env.PUBLIC_URL}/profile/${location.state.profilePicId}.png`}
                   alt="Summoner icon"
                 />
               </figure>
