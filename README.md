@@ -7,7 +7,7 @@
 <hr>
 <br>
 
-![alt text](/app_screenshot.png "app screenshot")
+![alt text](/app_screenshot.jpg "app screenshot")
 
 ## 🛠 Built With <a name="built-with"></a>
 
