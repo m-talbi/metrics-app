@@ -37,7 +37,7 @@ const Main = () => {
               hotStreaks={regions.hotStreaks}
               veterans={regions.veterans}
             />
-            <Regions regions={regions.regions ?? []} navigate={navigateToRegion} />
+            <Regions regions={regions.regions} navigate={navigateToRegion} />
           </>
         ) : (
           <MainLoading />

@@ -39,9 +39,15 @@
     }
 
     > .filter-field {
+      background-color: #c23d70;
+      color: white;
+      opacity: 1;
+      width: 50%;
       border: none;
       outline: none;
-      padding: 0 0.5rem;
+      padding: 0 0.75rem;
+      border-top-left-radius: 1.625rem;
+      border-bottom-left-radius: 1.625rem;
     }
   }
 

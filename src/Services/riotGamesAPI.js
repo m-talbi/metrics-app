@@ -1,4 +1,4 @@
-const API_KEY = 'RGAPI-ed5f7031-5881-4109-af91-34244d9acf9c';
+const API_KEY = process.env.REACT_APP_API_KEY;
 const RANKED_5V5_ENDPOINT = 'api.riotgames.com/lol/league/v4/challengerleagues/by-queue/RANKED_SOLO_5x5';
 const SUMMONER_ACCOUNT_ENDPOINT = 'api.riotgames.com/lol/summoner/v4/summoners';
 const MATCH_HISTORY_IDS_ENDPOINT = 'api.riotgames.com/lol/match/v5/matches/by-puuid';
