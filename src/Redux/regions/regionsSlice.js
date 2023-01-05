@@ -19,7 +19,7 @@ export const getAllRegionPlayersThunk = createAsyncThunk(getAllRegionPlayersType
     .then((data) => ({
       [region]: {
         ...data,
-        entries: data.entries.filter((_, idx) => idx < 30).map((player) => ({
+        entries: data.entries.filter((_, idx) => idx < 50).map((player) => ({
           ...player, profileId: generateProfilePicId(0, 62),
         })),
       },
