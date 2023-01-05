@@ -88,7 +88,22 @@ Install this project with:
 
 To run the project, follow below instructions:
 
-- To run preview, execute the following command
+- Create an account at https://developer.riotgames.com/
+
+- Generate an api key
+
+- Create a new file in root directory called `.env` and insert below code:
+
+```sh
+REACT_APP_API_KEY={API_KEY_GENERATED}
+```
+
+- Example:
+```sh
+REACT_APP_API_KEY=RGAPI-2a9e6e8c-917c-8394-a8f3-baa489cd9fe8
+```
+
+- Now you can run the app in development mode by executing:
 
 ```sh
 npm run start
