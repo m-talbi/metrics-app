@@ -50,7 +50,7 @@ describe('App Integration', () => {
     window.scrollTo = jest.fn();
   });
 
-  test('App should renders data coming from riot Games API', async () => {
+  test('App should render data', async () => {
     await act(() => store.dispatch(getAllRegionPlayersThunk()));
     await act(() => render(<Provider store={store}><App /></Provider>));
 
@@ -97,14 +97,14 @@ describe('App Integration', () => {
       id: playerData.summonerId,
     })));
 
-    const { player } = store.getState();
-
     act(() => screen.getByText(playerData.summonerName).click());
 
     // should render page title
     expect(screen.getByText('Games History')).not.toBeNull();
 
     // should render match details
+    const { player } = store.getState();
+
     expect(screen.getAllByText(player.games[0].info.gameMode).length).toBeGreaterThan(0);
     expect(screen.getAllByText(/(Victory)|(Defeat)/).length).toBeGreaterThan(0);
     expect(screen.getByText(player.summoner.name)).not.toBeNull();

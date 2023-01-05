@@ -11,7 +11,7 @@ import {
 import history from './Data/matchIds';
 import matches from './Data/matchesHistory';
 
-let store = configureStore({
+const store = configureStore({
   reducer: {
     regions: regionsSlice,
     player: playerSlice,
@@ -22,13 +22,6 @@ jest.mock('../Services/riotGamesAPI');
 
 describe('Player Slice', () => {
   beforeEach(() => {
-    store = configureStore({
-      reducer: {
-        regions: regionsSlice,
-        player: playerSlice,
-      },
-    });
-
     getAccountBySummonerIdAsync.mockResolvedValue(account);
     getMatchHistoryIdsByPuuidAsync.mockResolvedValue(history);
     getMatchHistoryInfoByMatchIdAsync.mockImplementation((_, id) => {
