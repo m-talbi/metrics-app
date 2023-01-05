@@ -195,4 +195,4 @@ This project is [MIT](./MIT.md) licensed.
 
 ## Credit
 
-Original design is by (Nelson Sakwa on Behance)[https://www.behance.net/sakwadesignstudio].
+Original design is by [Nelson Sakwa on Behance](https://www.behance.net/sakwadesignstudio).
