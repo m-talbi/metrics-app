@@ -184,7 +184,8 @@ Give a ⭐️ if you like this project!
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank Microverse for project inspiration.
+- I would like to thank Microverse for project inspiration.
+- Original design is by [Nelson Sakwa on Behance](https://www.behance.net/sakwadesignstudio).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -205,9 +206,3 @@ I would like to thank Microverse for project inspiration.
 This project is [MIT](./MIT.md) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- Credit -->
-
-## Credit
-
-Original design is by [Nelson Sakwa on Behance](https://www.behance.net/sakwadesignstudio).
