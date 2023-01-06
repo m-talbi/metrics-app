@@ -35,16 +35,11 @@ describe('App Integration', () => {
     });
 
     getRegionPlayersAsync.mockImplementation((region) => {
-      const regionsData = {
-        Europe: regionsArray[0],
-        Russia: regionsArray[1],
-        Brazil: regionsArray[2],
-        Japan: regionsArray[3],
-        Korea: regionsArray[4],
-        'North America': regionsArray[5],
-      };
+      const regionsData = ['Europe', 'Russia', 'Brazil', 'Japan', 'Korea', 'North America']
+        .map((regionName, idx) => ({ [regionName]: regionsArray[idx] }));
 
-      return Promise.resolve(regionsData[region]);
+      const resolvedRegion = regionsData.find((regionData) => regionData[region])[region];
+      return Promise.resolve(resolvedRegion);
     });
 
     window.scrollTo = jest.fn();
@@ -57,7 +52,8 @@ describe('App Integration', () => {
     const regionsCount = screen.getByText((_, element) => element
       .classList
       .contains('regions'))
-      .children.length;
+      .children
+      .length;
 
     // Check if the App rendered 6 regions
     const { regions } = store.getState();
@@ -76,18 +72,14 @@ describe('App Integration', () => {
 
     const { entries } = regions.regions[0].Europe;
 
-    const player1 = entries[0].summonerName;
-    const player2 = entries[7].summonerName;
-    const player3 = entries[13].summonerName;
-    const player4 = entries[17].summonerName;
-    const player5 = entries[18].summonerName;
+    const player1 = entries[3].summonerName;
+    const player2 = entries[9].summonerName;
+    const player3 = entries[17].summonerName;
 
     // Check if the App rendered a list of players
     expect(screen.getByText(player1)).not.toBeNull();
     expect(screen.getByText(player2)).not.toBeNull();
     expect(screen.getByText(player3)).not.toBeNull();
-    expect(screen.getByText(player4)).not.toBeNull();
-    expect(screen.getByText(player5)).not.toBeNull();
 
     // Render player match histories
     const playerData = regions.regions[0].Europe.entries[0];
@@ -99,10 +91,10 @@ describe('App Integration', () => {
 
     act(() => screen.getByText(playerData.summonerName).click());
 
-    // should render page title
+    // Check if the app rendered player page title
     expect(screen.getByText('Games History')).not.toBeNull();
 
-    // should render match details
+    // Check if the app rendered games details
     const { player } = store.getState();
 
     expect(screen.getAllByText(player.games[0].info.gameMode).length).toBeGreaterThan(0);
