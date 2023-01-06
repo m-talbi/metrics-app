@@ -10,13 +10,7 @@ const Main = () => {
   const navigate = useNavigate();
 
   const navigateToRegion = (key) => () => {
-    const path = `region/${key.toLowerCase().replace(' ', '-')}`;
-    navigate(path, {
-      state: {
-        region: key,
-        path: path.split('/'),
-      },
-    });
+    navigate(`region/${key.toLowerCase().replace(' ', '-')}`);
   };
 
   return (

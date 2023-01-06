@@ -26,9 +26,9 @@ const Header = () => {
   }, [location.pathname]);
 
   const navigateToPreviousPage = () => {
-    const { path } = location.state;
-    const newPath = path.slice(0, path.length - 2);
-    navigate(newPath.join('/'), { state: { ...location.state, path: newPath } });
+    if (/\/player\/(\w+)|(\w+\/)\//.test(location.pathname)) {
+      navigate(location.pathname.match(/\/region\/(\w+\/|\w+)/g)[0]);
+    } else navigate('/');
   };
 
   return (

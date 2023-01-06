@@ -64,7 +64,7 @@ const Player = () => {
               <p className="title">Games History</p>
               <div className="games">
                 {
-                  player?.games && player.games.map((game) => (
+                  player && player.games.map((game) => (
                     <MatchHistoryCard
                       key={game.metadata.matchId}
                       game={game}
