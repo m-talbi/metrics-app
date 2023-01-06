@@ -18,7 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/region/:regionName" element={<Region />} />
-          <Route path="/region/:regionName/player/:id" element={<Player />} />
+          <Route path="/region/:regionName/player/:playerName" element={<Player />} />
         </Routes>
       </div>
     </BrowserRouter>

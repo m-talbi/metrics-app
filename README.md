@@ -2,7 +2,7 @@
 
 # 📖 League Challengers Tracker <a name="about-project"></a>
 
-**League Challengers Tracker** is basic application that aims to provide users with access to real-time statistics from Riot Games for the top challenger players in League of Legends. With this project, you can retrieve stats such as champion scores, KDA, and win rate for recent games played by these players, across all regions. You can also filter players to find the ones that best meet your needs.
+**League Challengers Tracker** is a basic application that aims to provide users with access to real-time statistics from Riot Games for the top challenger players in League of Legends. With this project, you can retrieve stats such as champion scores, KDA, and win rate for recent games played by these players, across all regions. You can also filter players to find the ones that best meet your needs.
 
 <hr>
 <br>

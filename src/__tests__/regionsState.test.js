@@ -17,16 +17,11 @@ jest.mock('../Services/riotGamesAPI');
 describe('Regions Slice', () => {
   beforeEach(() => {
     getRegionPlayersAsync.mockImplementation((region) => {
-      const regionsData = {
-        Europe: regionsArray[0],
-        Russia: regionsArray[1],
-        Brazil: regionsArray[2],
-        Japan: regionsArray[3],
-        Korea: regionsArray[4],
-        'North America': regionsArray[5],
-      };
+      const regionsData = ['Europe', 'Russia', 'Brazil', 'Japan', 'Korea', 'North America']
+        .map((regionName, idx) => ({ [regionName]: regionsArray[idx] }));
 
-      return Promise.resolve(regionsData[region]);
+      const resolvedRegion = regionsData.find((regionData) => regionData[region])[region];
+      return Promise.resolve(resolvedRegion);
     });
   });
 

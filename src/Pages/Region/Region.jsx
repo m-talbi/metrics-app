@@ -1,4 +1,4 @@
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import {
   useEffect, useLayoutEffect, useRef, useState,
@@ -7,20 +7,23 @@ import './region.scss';
 import PlayerCard from '../../Components/PlayerCard/PlayerCard';
 
 const Region = () => {
-  const location = useLocation();
+  const { regionName } = useParams();
   const navigate = useNavigate();
   const [highestLP, setHighestLP] = useState();
   const [ladder, setLadder] = useState();
 
-  const region = useSelector((state) => state.regions)
-    ?.regions
-    ?.find((region) => region[location.state.region])[location.state.region];
-
+  const region = useSelector((state) => state.regions);
   const sorted = useRef(null);
+  const currentRegion = regionName.slice(0, 1).toUpperCase() + regionName.slice(1);
 
   useEffect(() => {
     if (region) {
-      sorted.current = [...region.entries];
+      sorted.current = [
+        ...region
+          .regions
+          .find((region) => region[currentRegion])[currentRegion].entries,
+      ];
+
       sorted.current.sort((player1, player2) => player1.leaguePoints < player2.leaguePoints);
 
       setHighestLP(sorted.current[0].leaguePoints);
@@ -33,13 +36,11 @@ const Region = () => {
   }, []);
 
   const navigateToProfile = (player, profilePicId) => () => {
-    const path = `player/${player.summonerName}`;
-    navigate(path, {
+    navigate(`player/${player.summonerName}`, {
       state: {
-        ...location.state,
         player,
         profilePicId,
-        path: [...location.state.path, ...path.split('/')],
+        region: currentRegion,
       },
     });
   };
@@ -57,12 +58,12 @@ const Region = () => {
         <figure>
           <img
             className="region-map"
-            src={`${process.env.PUBLIC_URL}/regions/${location.state.region.toLowerCase()}.png`}
-            alt={`${location.state.region} region map`}
+            src={`${process.env.PUBLIC_URL}/regions/${regionName}.png`}
+            alt={`${regionName} region map`}
           />
         </figure>
         <div className="region-name">
-          <p>{location.state.region}</p>
+          <p>{currentRegion}</p>
           <p>Highest LP</p>
           <p>{highestLP}</p>
         </div>
