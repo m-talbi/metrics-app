@@ -1,0 +1,46 @@
+.regions-stats {
+  background-color: #df4682;
+
+  .key {
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .value {
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  .title {
+    padding: 0.3rem 1rem;
+  }
+}
+
+.main-stats {
+  background-color: #f74e8f;
+  padding: 0.75rem 0;
+  display: flex;
+
+  & > div {
+    width: 25%;
+    text-align: center;
+  }
+}
+
+.other-stats {
+  display: flex;
+
+  & > div {
+    padding: 0.75rem 0;
+    width: 50%;
+    text-align: center;
+  }
+
+  & > div:first-child {
+    background-color: #df4782;
+  }
+
+  & > div:last-child {
+    background-color: #d6457c;
+  }
+}

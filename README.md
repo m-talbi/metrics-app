@@ -1,70 +1,208 @@
-# Getting Started with Create React App
+<!-- PROJECT DESCRIPTION -->
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 📖 League Challengers Tracker <a name="about-project"></a>
 
-## Available Scripts
+**League Challengers Tracker** is basic application that aims to provide users with access to real-time statistics from Riot Games for the top challenger players in League of Legends. With this project, you can retrieve stats such as champion scores, KDA, and win rate for recent games played by these players, across all regions. You can also filter players to find the ones that best meet your needs.
 
-In the project directory, you can run:
+<hr>
+<br>
 
-### `npm start`
+![alt text](/app_screenshot.jpg "app screenshot")
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🛠 Built With <a name="built-with"></a>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Tech Stack <a name="tech-stack"></a>
 
-### `npm test`
+- React
+- Redux
+- CSS/SCSS
+- Javascript
+- Jest
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<!-- Features -->
 
-### `npm run build`
+### Key Features <a name="key-features"></a>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Display real-time statistics of the top players from every region**
+- **Display real-time statistics of players match history**
+- **Filter the list of players to find the one that meet your needs**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<!-- LIVE DEMO -->
 
-### `npm run eject`
+## 🚀 Live Demo <a name="live-demo"></a>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- [Open live demo](https://league-challengers-tracker.onrender.com/)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<!-- GETTING STARTED -->
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 💻 Getting Started <a name="getting-started"></a>
 
-## Learn More
+To get a local copy up and running, follow these steps.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Prerequisites
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+In order to run this project you need to install these prerequisites:
 
-### Code Splitting
+- If you're running on Windows you can download the prerequisites from the links down below:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+> [Nodejs](https://nodejs.org/en/)
 
-### Analyzing the Bundle Size
+> [Git](https://git-scm.com/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- If you're running on Linux follow these steps down below:
 
-### Making a Progressive Web App
+- Install git.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```sh
+ sudo apt install git
+```
 
-### Advanced Configuration
+- Install nodejs and npm.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```sh
+ sudo apt install nodejs
+```
+
+### Setup
+
+Clone this repository to your desired folder:
+
+```sh
+  git clone git@github.com:Kweeka1/metrics-app.git
+  cd metrics-app
+```
+
+### Install
+
+Install this project with:
+
+```sh
+  npm install
+```
+
+### Usage
+
+To run the project, follow below instructions:
+
+- Create an account at https://developer.riotgames.com/
+
+- Generate an api key
+
+- Create a new file in root directory called `.env` and insert below code:
+
+```sh
+REACT_APP_API_KEY={API_KEY_GENERATED}
+```
+
+- Example:
+```sh
+REACT_APP_API_KEY=RGAPI-2a9e6e8c-917c-8394-a8f3-baa489cd9fe8
+```
+
+- Now you can run the app in development mode by executing:
+
+```sh
+npm run start
+```
+
+- To get a production build, execute the following command
+
+```sh
+npm run build
+```
+
+### Run tests
+
+To run tests, run the following command:
+
+```sh
+  npm run test
+```
+
 
 ### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+You can deploy the production build of this project using npm library called `gh-pages`:
 
-### `npm run build` fails to minify
+- First install the library
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```sh
+npm install gh-pages --save-dev
+```
+
+- Then follow the instructions provided in their readme file to deploy the app
+
+[GH Pages README](https://www.npmjs.com/package/gh-pages)
+
+- deploy the build folder after running `npm run build`.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- AUTHORS -->
+
+## 👥 Authors <a name="authors"></a>
+
+👤 **Mohamed Talbi**
+
+- GitHub: [Mohamed Talbi](https://github.com/Kweeka1)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- FUTURE FEATURES -->
+
+## 🔭 Future Features <a name="future-features"></a>
+
+- [ ] **Improve User Interface**
+- [ ] **Make a desktop design for the app**
+- [ ] **Add expand button to match history card to show additional info**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- CONTRIBUTING -->
+
+## 🤝 Contributing <a name="contributing"></a>
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/Kweeka1/metrics-app/issues).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- SUPPORT -->
+
+## ⭐️ Show your support <a name="support"></a>
+
+Give a ⭐️ if you like this project!
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ACKNOWLEDGEMENTS -->
+
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
+- I would like to thank Microverse for project inspiration.
+- Original design is by [Nelson Sakwa on Behance](https://www.behance.net/sakwadesignstudio).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- FAQ (optional) -->
+
+## ❓ FAQ <a name="faq"></a>
+
+- **What version of nodejs does this project works on?**
+
+  - The project runs well with nodejs 14+. you might face some issues while running this project in lower versions.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LICENSE -->
+
+## 📝 License <a name="license"></a>
+
+This project is [MIT](./MIT.md) licensed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>

@@ -1,0 +1,21 @@
+.app-main {
+  background-color: #f74e8f;
+  color: white;
+  min-height: 100vh;
+}
+
+.main-league-stats {
+  figure {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f74e8f;
+    opacity: 0.7;
+
+    img {
+      width: 200px;
+      height: 200px;
+      filter: hue-rotate(250deg);
+    }
+  }
+}

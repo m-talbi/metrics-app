@@ -1,0 +1,35 @@
+.card {
+  width: 50%;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  cursor: pointer;
+  position: relative;
+
+  > svg {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+  }
+
+  img {
+    width: 100px;
+    filter: opacity(0.8) drop-shadow(0 0 0 blue);
+    border-radius: 50%;
+  }
+
+  .player-stats {
+    text-align: end;
+
+    > p:first-child {
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    > p:last-child {
+      font-size: 14px;
+      font-weight: 700;
+    }
+  }
+}
